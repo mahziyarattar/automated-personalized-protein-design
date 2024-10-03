@@ -15,9 +15,13 @@ Current medical treatments frequently overlook the intricate genetic differences
 
 Automated Personalized Protein Design seeks to address these challenges by creating an end-to-end workflow that leverages advanced technologies to design proteins tailored to an individual's genetic profile. This innovative approach combines DNA sequencing, Retrieval-Augmented Generation (RAG), fine-tuned Large Language Models (LLMs), and the MPM4 protein design model to streamline and enhance the protein development process.
 
+### About MPM4 Model
+
+The MPM4 model is a state-of-the-art foundation model trained using 138K tokens and 3.2B unique data points across 70 synchronized tasks. It prioritizes molecule programmability and achieves remarkable results with approximately 3,800 AMD-Instinct GPU-days. For more information, visit [310.ai MPM4](https://310.ai/mp/repo).
+
 ## Workflow Breakdown
 
-1. **DNA Alignment and Variant Detection:** Utilizing tools like NVIDIA Parabricks, the process begins with rapid alignment of an individual's DNA sequence against reference genomes. This step identifies genetic mismatches, or variants, that could impact protein function.
+1. **DNA Alignment and Variant Detection:** Utilizing tools like NVIDIA Parabricks, the process begins with rapid alignment of an individual's DNA sequence against reference genomes. NVIDIA® Parabricks® is a scalable genomics analysis software suite that processes data in minutes, supporting diverse bioinformatics workflows. This step identifies genetic mismatches, or variants, that could impact protein function.
 2. **Variant Interpretation with LLM:** A fine-tuned LLM, enhanced with RAG capabilities, analyzes these genetic variants to assess their functional impact on proteins. This analysis prioritizes pathogenic variants that are most likely to affect protein efficacy and safety.
 3. **Prompt Generation via Function Calling:** Based on the variant interpretation, the system generates precise prompts using OpenAI's function calling method. These prompts are designed to instruct the MPM4 model on the specific modifications needed for protein redesign.
 4. **Protein Design with MPM4 Model:** The MPM4 model processes these prompts to create customized protein sequences. It considers essential factors such as protein folding, stability, and functionality to ensure the designed proteins meet therapeutic requirements.
